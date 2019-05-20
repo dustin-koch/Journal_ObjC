@@ -22,12 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 //CRUD functions
 //add entry
-- (void) createEntryWithName:(NSString*) name andBody:(NSString*) bodyText;
+- (void) createEntryWithName:(NSString*) title andBody:(NSString*) bodyText;
 
 //delete entry
 - (void) deleteEntry:(DHKEntry*) entry;
 
 //update entry?
+- (void) updateEntry:(DHKEntry*) entry withTitle:(NSString*) title withBody:(NSString*) body;
 
 @end
 

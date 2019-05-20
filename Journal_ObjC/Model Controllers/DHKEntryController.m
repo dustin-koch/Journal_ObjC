@@ -40,15 +40,22 @@
     return self.internalEntries;
 }
 //MARK CRUD FUNCTIONS
-- (void)createEntryWithName:(NSString *)name andBody:(NSString *)bodyText
+- (void)createEntryWithName:(NSString *)title andBody:(NSString *)bodyText
 {
-    DHKEntry *newEntry = [[DHKEntry alloc] initWithTitle:name body:bodyText];
+    DHKEntry *newEntry = [[DHKEntry alloc] initWithTitle:title body:bodyText];
     [self.internalEntries addObject:newEntry];
 }
 
 - (void)deleteEntry:(DHKEntry *)entry
 {
     [self.internalEntries removeObject:entry];
+}
+
+- (void)updateEntry:(DHKEntry *)entry withTitle:(NSString *)title withBody:(NSString *)body
+{
+    entry.title = title;
+    entry.bodyText = body;
+    entry.timeStamp = [[NSDate alloc] init];
 }
 
 @end

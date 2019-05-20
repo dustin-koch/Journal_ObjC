@@ -13,22 +13,37 @@
         <!--Journal Entries-->
         <scene sceneID="VGc-Wm-LlJ">
             <objects>
-                <tableViewController id="XY1-t4-Jpw" sceneMemberID="viewController">
+                <tableViewController id="XY1-t4-Jpw" customClass="EntriesListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bCH-uU-2MD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="110" id="pfn-Yc-jOe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" textLabel="fsj-Wu-Xrd" detailTextLabel="E32-CO-FX5" rowHeight="110" style="IBUITableViewCellStyleSubtitle" id="pfn-Yc-jOe">
                                 <rect key="frame" x="0.0" y="28" width="414" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pfn-Yc-jOe" id="hSK-Ao-yQw">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="109.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fsj-Wu-Xrd">
+                                            <rect key="frame" x="20" y="35" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E32-CO-FX5">
+                                            <rect key="frame" x="20" y="58.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="2D6-BM-yCm" kind="show" id="JaL-Tz-Gp6"/>
+                                    <segue destination="2D6-BM-yCm" kind="show" identifier="toEntryDetailView" id="JaL-Tz-Gp6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -49,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="1302.8985507246377" y="171.42857142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry Detail View Controller-->
         <scene sceneID="jP6-UE-0id">
             <objects>
-                <viewController id="2D6-BM-yCm" sceneMemberID="viewController">
+                <viewController id="2D6-BM-yCm" customClass="EntryDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="upV-GW-Cas">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,6 +103,9 @@
                                 <state key="normal" title="CLEAR TEXT">
                                     <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearButtonTapped:" destination="2D6-BM-yCm" eventType="touchUpInside" id="JPH-8k-MSm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,8 +123,16 @@
                         <viewLayoutGuide key="safeArea" id="GKm-Qn-bu1"/>
                     </view>
                     <navigationItem key="navigationItem" id="hfe-EV-Sy7">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="RHk-hw-hst"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="RHk-hw-hst">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="2D6-BM-yCm" id="qGH-g9-Pl5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="AgK-Sg-Thb" id="WIG-kL-rGR"/>
+                        <outlet property="entryTitleTextField" destination="cp9-rV-wXA" id="6z7-zn-ETf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9x-h7-Hg3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

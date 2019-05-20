@@ -14,6 +14,8 @@
 		CA25605A2293474F00418E08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2560592293474F00418E08 /* main.m */; };
 		CA256063229349C300418E08 /* DHKEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CA256062229349C300418E08 /* DHKEntry.m */; };
 		CAD602F422934E4300C3B04A /* DHKEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD602F322934E4300C3B04A /* DHKEntryController.m */; };
+		CAD602F8229354A600C3B04A /* EntriesListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD602F7229354A600C3B04A /* EntriesListTableViewController.m */; };
+		CAD602FC229354CF00C3B04A /* EntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD602FB229354CF00C3B04A /* EntryDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		CA256062229349C300418E08 /* DHKEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHKEntry.m; sourceTree = "<group>"; };
 		CAD602F222934E4300C3B04A /* DHKEntryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHKEntryController.h; sourceTree = "<group>"; };
 		CAD602F322934E4300C3B04A /* DHKEntryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHKEntryController.m; sourceTree = "<group>"; };
+		CAD602F6229354A600C3B04A /* EntriesListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntriesListTableViewController.h; sourceTree = "<group>"; };
+		CAD602F7229354A600C3B04A /* EntriesListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntriesListTableViewController.m; sourceTree = "<group>"; };
+		CAD602FA229354CF00C3B04A /* EntryDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntryDetailViewController.h; sourceTree = "<group>"; };
+		CAD602FB229354CF00C3B04A /* EntryDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntryDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 				CA2560602293476A00418E08 /* Resources */,
 				CA256064229349CA00418E08 /* Models */,
 				CAD602F522934E4C00C3B04A /* Model Controllers */,
+				CAD602F9229354AB00C3B04A /* View Controllers */,
 			);
 			path = Journal_ObjC;
 			sourceTree = "<group>";
@@ -98,6 +105,17 @@
 				CAD602F322934E4300C3B04A /* DHKEntryController.m */,
 			);
 			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		CAD602F9229354AB00C3B04A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CAD602F6229354A600C3B04A /* EntriesListTableViewController.h */,
+				CAD602F7229354A600C3B04A /* EntriesListTableViewController.m */,
+				CAD602FA229354CF00C3B04A /* EntryDetailViewController.h */,
+				CAD602FB229354CF00C3B04A /* EntryDetailViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAD602FC229354CF00C3B04A /* EntryDetailViewController.m in Sources */,
 				CAD602F422934E4300C3B04A /* DHKEntryController.m in Sources */,
 				CA25605A2293474F00418E08 /* main.m in Sources */,
 				CA256063229349C300418E08 /* DHKEntry.m in Sources */,
+				CAD602F8229354A600C3B04A /* EntriesListTableViewController.m in Sources */,
 				CA25604C2293474F00418E08 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
